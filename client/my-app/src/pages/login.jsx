@@ -11,14 +11,6 @@ export default function Login() {
   const loginHandler = async () => {
     try {
       if (window.ethereum) {
-        //metamask is here
-        // window.ethereum.request({ method: 'eth_requestAccounts' })
-        //   .then(result => {
-        //     setEthAddress(result[0]);
-        //     console.log("log in")
-        //     return result[0]
-        //   })
-        //   .then(
         const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
         console.log(provider);
         // Prompt user for account connections
