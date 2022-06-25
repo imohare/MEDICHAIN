@@ -6,6 +6,7 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@rebass/forms": "^4.0.6",
     "@privy-io/privy-browser": "^0.0.1",
     "@rebass/layout": "^4.0.6",
     "@testing-library/jest-dom": "^5.16.4",
