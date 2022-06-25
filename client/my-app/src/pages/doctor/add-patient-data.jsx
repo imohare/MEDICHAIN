@@ -1,4 +1,4 @@
-import { Flex, Box, Text } from "rebass";
+import { HStack } from "@chakra-ui/react";
 
 import LogoutButton from "../../buttons/logout";
 import PatientsButton from "../../buttons/doctor/patients";
@@ -8,11 +8,11 @@ export default function AddPatientData() {
 
   return (
    <div>
-    <Flex>
+    <HStack>
       <LogoutButton/>
       <PatientsButton/>
       <PatientButton/>
-    </Flex>
+    </HStack>
      <text>AddPatientData</text>
    </div>
   )
