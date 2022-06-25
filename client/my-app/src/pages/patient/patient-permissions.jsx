@@ -1,11 +1,11 @@
 // import LogoutButton from '../../buttons/logout';
 // import { Flex, Box, Text } from "rebass";
 
-export default function AddPatientData() {
+export default function PatientPermissions() {
 
   return (
    <div>
-     <text>AddPatientData</text>
+     <text>PatientPermissions</text>
    </div>
   )
 }
