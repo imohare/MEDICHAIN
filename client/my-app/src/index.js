@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
  import AddPatientData from './pages/doctor/add-patient-data';
  import Patients from './pages/doctor/patients';
  import PatientData from './pages/patient/patient-data';
+ import DoctorPatientData from './pages/doctor/patient-data';
  import PatientPermissions from './pages/patient/patient-permissions';
  import Login from './pages/login';
 
@@ -15,7 +16,7 @@ import ReactDOM from 'react-dom/client';
        <Route path="patient" element={<PatientData />} />
        <Route path="patient/permissions" element={<PatientPermissions />} />
        <Route path="doctor" element={<Patients />} />
-       <Route path="doctor/:patientId" element={<PatientData />} />
+       <Route path="doctor/:patientId" element={<DoctorPatientData />} />
        <Route path="doctor/add" element={<AddPatient />} />
        <Route path="doctor/addData" element={<AddPatientData />} />
      </Routes>
