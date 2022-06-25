@@ -1,5 +1,4 @@
-// import LogoutButton from '../../buttons/logout';
-// import { Flex, Box, Text } from "rebass";
+import { Flex, Box, Text } from "rebass";
 
 import LogoutButton from "../../buttons/logout";
 
@@ -7,7 +6,9 @@ export default function PatientData() {
 
   return (
    <div>
-    <LogoutButton/>
+    <Flex>
+      <LogoutButton/>
+    </Flex>
      <text>PatientData</text>
    </div>
   )
