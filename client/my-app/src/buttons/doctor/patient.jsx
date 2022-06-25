@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button, ButtonGroup } from '@chakra-ui/react'
-import { Text} from "rebass";
+import { Button, Text} from "rebass";
 
 export default function PatientButton() {
 
