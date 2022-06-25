@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import LogoutButton from '../../buttons/logout';
 import { Flex, Box, Text } from "rebass";
 
-export default function AddPatient() {
+export default function AddPatientData() {
 
   return (
     <main style={{ padding: "1rem 0" }}>
@@ -11,7 +11,7 @@ export default function AddPatient() {
         <LogoutButton/>
       </Flex>
       <Box px={2} py={2} width={2 / 3}>
-        <Text>AddPatient</Text>
+        <Text>AddPatientData</Text>
       </Box>
     </main>
   )
