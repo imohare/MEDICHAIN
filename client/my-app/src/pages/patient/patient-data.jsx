@@ -1,6 +1,7 @@
 import { Flex, Box, Text } from "rebass";
 
 import LogoutButton from "../../buttons/logout";
+import PatientDataList from "../../lists/patient-data-list";
 
 export default function PatientData() {
 
@@ -9,6 +10,7 @@ export default function PatientData() {
     <Flex>
       <LogoutButton/>
     </Flex>
+    <PatientDataList/>
      <text>PatientData</text>
    </div>
   )

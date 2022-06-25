@@ -2,6 +2,7 @@ import { Flex, Box, Text } from "rebass";
 import PatientsButton from "../../buttons/doctor/patients";
 
 import LogoutButton from "../../buttons/logout";
+import AddPatientForm from "../../forms/add-patient";
 
 export default function AddPatient() {
 
@@ -11,6 +12,7 @@ export default function AddPatient() {
       <LogoutButton/>
       <PatientsButton/>
     </Flex>
+    <AddPatientForm/>
      <text>AddPatient</text>
    </div>
   )
