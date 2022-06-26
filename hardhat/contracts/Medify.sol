@@ -50,6 +50,11 @@ contract Medify {
         emit PatientCreated(patientClone);
     }
 
+    function createPatientAndPermission(address healthProvider, MedifyPatient.PermissionType permissionType) external {
+        this.createPatient();
+        MedifyPatient(patientContracts[msg.sender]).addPermission(healthProvider, permissionType);
+    }
+
     function getPatientContract() external view returns (address) {
         return patientContracts[msg.sender];
     }
