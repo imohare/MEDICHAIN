@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import "./login.css";
 import { PrivyClient, SiweSession } from '@privy-io/privy-browser'
-const { ethers } = require("ethers");
+import { useNavigate } from 'react-router-dom';
+const { ethers } = require("ethers")
 
 
 
@@ -14,6 +15,8 @@ export default function Login() {
   const [signerState, setSigner] = useState('No signer yet');
   const [sessionState, setSession] = useState('No session yet');
   const [clientState, setClient] = useState('No client yet');
+  const navigate = useNavigate();
+
 
 
   const loginHandler = async () => {
@@ -28,7 +31,7 @@ export default function Login() {
         setSigner(signer);
         console.log("Account:", await signer.getAddress());
         //navigate to next page
-        // navigate('')
+        navigate('./patient');
 
         //const provider = typeof window !== "undefined" ? window.ethereum : null;
 
