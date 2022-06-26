@@ -18,6 +18,8 @@ root.render(
       <Route path="login" element={<Login />} />
       <Route path="patient" element={<PatientData />} />
       <Route path="patient/permissions" element={<PatientPermissions />} />
+
+      <Route path="patientDashboard" element={<PatientDashboard />} />
       <Route path="doctor" element={<Patients />} />
       <Route path="doctor/:patientId" element={<PatientData />} />
       <Route path="doctor/add" element={<AddPatient />} />
