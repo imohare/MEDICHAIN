@@ -19,7 +19,7 @@ export default function Login() {
 
 
 
-  const loginHandler = async () => {
+  const loginHandlerPatient = async () => {
     try {
       if (window.ethereum) {
         const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -45,11 +45,39 @@ export default function Login() {
     }
   }
 
+  const loginHandlerDoctor = async () => {
+    try {
+      if (window.ethereum) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+        setProvider(provider);
+        console.log(provider);
+        // Prompt user for account connections
+        await provider.send("eth_requestAccounts", []);
+        const signer = provider.getSigner();
+        setSigner(signer);
+        console.log("Account:", await signer.getAddress());
+        //navigate to next page
+        navigate('./patient');
+
+        //const provider = typeof window !== "undefined" ? window.ethereum : null;
+
+
+        //iitialise privy client
+      }
+    }
+    catch {
+      console.log('Please install Metamask');
+
+    }
+  }
   return (
     <div>
       <h1>Welcome To Medichain</h1>
       <h2>Take Control Of Your Own Data</h2>
-      <button onClick={loginHandler}>Login</button>
+      <button onClick={loginHandlerPatient}>Login As Patient</button>
+      <button onClick={loginHandlerDoctor}>Login As Doctor</button>
+
+
 
 
     </div>

@@ -8,8 +8,7 @@ import PatientData from './pages/patient/patient-data';
 import PatientPermissions from './pages/patient/patient-permissions';
 import Login from './pages/login';
 import PatientDasboard from './pages/patient/patientDasboard';
-
-
+// import DoctorPatientData from './c'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -19,7 +18,7 @@ root.render(
       <Route path="patient/permissions" element={<PatientPermissions />} />
       <Route path="patientDashboard" element={<PatientDasboard />} />
       <Route path="doctor" element={<Patients />} />
-      <Route path="doctor/:patientId" element={<PatientData />} />
+      {/* <Route path="doctor/:patientId" element={<DoctorPatientData />} /> */}
       <Route path="doctor/add" element={<AddPatient />} />
       <Route path="doctor/addData" element={<AddPatientData />} />
     </Routes>

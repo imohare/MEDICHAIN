@@ -5,12 +5,12 @@ import LogoutButton from "../../buttons/logout"
 export default function Patients() {
 
   return (
-   <div>
-    <Flex>
-      <LogoutButton/>
-    </Flex>
+    <div>
+      <Flex>
+        <LogoutButton />
+      </Flex>
 
-     <text>Patients</text>
-   </div>
+      <text>Your Patients</text>
+    </div>
   )
 }
