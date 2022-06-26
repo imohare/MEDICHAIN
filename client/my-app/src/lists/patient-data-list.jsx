@@ -1,5 +1,5 @@
 import myData from '../pages/patient/medicationAdmin.json';
-
+import { Text } from 'rebass';
 export default function PatientDataList() {
 
   var arr = [];
@@ -12,7 +12,9 @@ export default function PatientDataList() {
 
   return (
     <div>
-      <ul>{listItems}</ul>
+      <Text>
+        <ul>{listItems}</ul>
+      </Text>
     </div>
   )
 } 

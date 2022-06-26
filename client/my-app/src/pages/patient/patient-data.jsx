@@ -1,4 +1,4 @@
-import { Flex, Box, Text} from "rebass";
+import { Flex, Box, Text, Heading} from "rebass";
 
 import LogoutButton from "../../buttons/logout";
 import myData from './medicationAdmin.json';
@@ -11,8 +11,10 @@ export default function PatientData() {
       <Flex>
         <LogoutButton />
       </Flex>
+      <br/> <br/> <br/>
+      <Heading fontSize={[ 4 ]}>Welcome to your portal. Please view your medical records below:</Heading>
+      <br/> <br/> <br/> 
       <PatientDataList />
-      <text>PatientData</text>
     </div>
   );
 }

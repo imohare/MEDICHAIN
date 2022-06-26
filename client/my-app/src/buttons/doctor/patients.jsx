@@ -12,9 +12,8 @@ export default function PatientsButton() {
   return (
     <div>
       <Button mr={2} onClick={PatientsRoute} backgroundColor="#33e">
-        <Text>
-          Patients
-        </Text>
+        <br/> <br/> <br/> <br/> <br/>
+        <Text> Patients </Text>
       </Button>
     </div>
   );

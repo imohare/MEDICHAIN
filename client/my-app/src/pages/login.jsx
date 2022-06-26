@@ -1,11 +1,10 @@
-// import LogoutButton from '../../buttons/logout';
-// import { Flex, Box, Text } from "rebass";
+import { Flex, Box, Text, Heading, Button, Image } from "rebass";
 import React, { useEffect, useState } from 'react';
-// import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Navigate } from 'react-router-dom';
-import "./login.css";
-import { PrivyClient, SiweSession } from '@privy-io/privy-browser'
 import { useNavigate } from 'react-router-dom';
+
+import logo from '../medichain-logo.png';
+import logo2 from '../medichain-logo-2.png';
 const { ethers } = require("ethers")
 
 export default function Login() {
@@ -16,25 +15,18 @@ export default function Login() {
   const [clientState, setClient] = useState('No client yet');
   const navigate = useNavigate();
 
-
   const loginHandler = async () => {
     try {
       if (window.ethereum) {
         const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
         setProvider(provider);
         console.log(provider);
-        // Prompt user for account connections
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
         setSigner(signer);
-        console.log("Account:", await signer.getAddress());
-        //navigate to next page
         navigate('./patient');
 
         //const provider = typeof window !== "undefined" ? window.ethereum : null;
-
- 
-        //iitialise privy client
       }
     }
     catch {
@@ -45,11 +37,23 @@ export default function Login() {
 
   return (
     <div>
-      <h1>Welcome To Medichain</h1>
-      <h2>Take Control Of Your Own Data</h2>
-      <button onClick={loginHandler}>Login</button>
-      <ConnectButton />
-
+           <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>     <br/>
+        <Box>
+            <Heading fontFamily="roboto" textAlign="center" fontSize={[ 5, 6, 7 ]} color='#33e' fontWeight='bold'> Welcome To Medichain </Heading>
+        </Box>
+        <br/>
+        <Box> 
+          <Text fontFamily="Roboto" textAlign="center">Take Control Of Your Own Data</Text>
+        </Box>
+        <br/>
+        <Flex>
+  <Box width={[ 1, 1/2 ]}>
+        <Image width={[ 1/4 ]} src={logo2} borderRadius={8}/>
+    </Box>
+  <Box width={[ 1, 1/2 ]}>
+    <Button onClick={loginHandler}>Login using Metamask</Button>
+  </Box>
+</Flex>
 
     </div>
   )

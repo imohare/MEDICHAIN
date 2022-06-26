@@ -5,7 +5,7 @@ export default function LogoutButton() {
 
   let navigate = useNavigate(); 
   const LogoutRoute = () =>{ 
-    let path = `/login`; 
+    let path = `/`; 
     navigate(path);
   }
 
