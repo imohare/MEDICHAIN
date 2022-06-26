@@ -8,3 +8,4 @@ typechain
 hardhat/cache
 hardhat/artifacts
 client/artifacts
+frontend/artifacts
