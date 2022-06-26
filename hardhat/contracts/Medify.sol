@@ -27,12 +27,18 @@ contract Medify {
     }
 
     modifier patientExists(address patient) {
-        require(patientContracts[patient] != address(0), "Patient must be created first");
+        require(
+            patientContracts[patient] != address(0),
+            "Patient must be created first"
+        );
         _;
     }
 
     function createPatient() external {
-        require(patientContracts[msg.sender] != address(0), "Patient already created");
+        require(
+            patientContracts[msg.sender] != address(0),
+            "Patient already created"
+        );
         address patientClone = Clones.cloneDeterministic(
             patientImplContract,
             bytes32(salt++)
@@ -44,7 +50,7 @@ contract Medify {
         emit PatientCreated(patientClone);
     }
 
-    function getPatientContract() external view returns(address) {
+    function getPatientContract() external view returns (address) {
         return patientContracts[msg.sender];
     }
 
@@ -56,7 +62,7 @@ contract Medify {
         healthProviderPatients[msg.sender].remove(patient);
     }
 
-    function getPatientList() external view returns (address[] memory){
+    function getPatientList() external view returns (address[] memory) {
         return healthProviderPatients[msg.sender].values();
     }
 }

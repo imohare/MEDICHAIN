@@ -83,18 +83,35 @@ contract MedifyPatient is Initializable {
         canWrite = healthProviderPermissions[healthProvider].write;
     }
 
-    function getAllHealthProviders() external view isOwner returns(address[] memory)
+    function getAllHealthProviders()
+        external
+        view
+        isOwner
+        returns (address[] memory)
     {
         return healthProviders.values();
     }
 
-    function getAllPermissions() external view isOwner returns(HealthProviderPermissions[] memory) {
-        uint numHealthProviders = healthProviders.length();
-        HealthProviderPermissions[] memory _healthProviderPermissions = new HealthProviderPermissions[](numHealthProviders);
+    function getAllPermissions()
+        external
+        view
+        isOwner
+        returns (HealthProviderPermissions[] memory)
+    {
+        uint256 numHealthProviders = healthProviders.length();
+        HealthProviderPermissions[]
+            memory _healthProviderPermissions = new HealthProviderPermissions[](
+                numHealthProviders
+            );
 
-        for(uint i = 0; i < numHealthProviders; i++) {
-            _healthProviderPermissions[i].healthProvider = healthProviders.at(i);
-            _healthProviderPermissions[i].permissions = healthProviderPermissions[_healthProviderPermissions[i].healthProvider];
+        for (uint256 i = 0; i < numHealthProviders; i++) {
+            _healthProviderPermissions[i].healthProvider = healthProviders.at(
+                i
+            );
+            _healthProviderPermissions[i]
+                .permissions = healthProviderPermissions[
+                _healthProviderPermissions[i].healthProvider
+            ];
         }
 
         return _healthProviderPermissions;
