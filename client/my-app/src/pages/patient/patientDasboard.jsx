@@ -1,9 +1,10 @@
 import React from 'react'
 
-function patientdasboard() {
+function PatientDasboard() {
   return (
-    <div>patient-dasboard</div>
-  )
+    <div>Welcome to Your Patient Dasboard</div>
+
+  );
 }
 
-export default patientdasboard
+export default PatientDasboard;
