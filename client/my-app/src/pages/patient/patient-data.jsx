@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { PrivyClient, SiweSession } from '@privy-io/privy-browser'
-import Head from 'next/head';
 import Color from 'color'
-import { PrivyConfig } from '@privy-io/privy-node';
-console.log(PrivyConfig);
+// import { PrivyConfig } from '@privy-io/privy-node';
+// console.log(PrivyConfig);
 
 const LIGHT_TEXT_COLOR = '#FFFFFF'
 const DARK_TEXT_COLOR = '#171717'
@@ -151,12 +150,9 @@ export default function Home() {
     ]);
 
     //add admin and read
-    const newRoleRequesters = await client.addRequestersToRole('Read-admin', [
-      'adminId',
-    ]);
 
-    console.log(newRoleRequesters);
-    console.log(await privyConfig.get('adminId', ['first-name', 'fav-color', 'drug', 'quantity-of-drug', 'doctor', 'date']));
+
+    // console.log(await privyConfig.get('adminId', ['first-name', 'fav-color', 'drug', 'quantity-of-drug', 'doctor', 'date']));
 
 
     setState({
@@ -178,9 +174,7 @@ export default function Home() {
   // What is rendered on the page
   return (
     <div>
-      <Head>
-        <title>Privy Quickstart</title>
-      </Head>
+
       <div style={{ color: textColor }} className="container">
         {state?.userId && (
           <>

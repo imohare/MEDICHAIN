@@ -8,8 +8,6 @@ const { ethers } = require("ethers");
 
 
 
-
-
 export default function Login() {
   const [ethAddress, setEthAddress] = useState('No address yet');
   const [providerState, setProvider] = useState('No provider yet');
@@ -30,14 +28,10 @@ export default function Login() {
         setSigner(signer);
         console.log("Account:", await signer.getAddress());
         //navigate to next page
+        // navigate('')
 
         //const provider = typeof window !== "undefined" ? window.ethereum : null;
-        const session = new SiweSession(process.env.NEXT_PUBLIC_PRIVY_API_KEY, window.ethereum)
-        setSession(session);
-        const client = new PrivyClient({
-          session: session,
-        });
-        setClient(client);
+
 
         //iitialise privy client
       }
