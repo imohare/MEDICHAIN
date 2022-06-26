@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Navigate } from 'react-router-dom';
 import "./login.css";
-import { PrivyClient, SiweSession } from '@privy-io/privy-browser'
 import { useNavigate } from 'react-router-dom';
+import { storeFiles, retrieveFiles } from "../web3Store"
 const { ethers } = require("ethers")
+
 
 export default function Login() {
   const [ethAddress, setEthAddress] = useState('No address yet');
@@ -30,6 +31,10 @@ export default function Login() {
         setSigner(signer);
         console.log("Account:", await signer.getAddress());
         //navigate to next page
+        console.log('in login handler');
+        await storeFiles();
+        await retrieveFiles();
+
         navigate('./patient');
 
         //const provider = typeof window !== "undefined" ? window.ethereum : null;
