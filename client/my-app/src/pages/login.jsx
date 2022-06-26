@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import "./login.css";
 import { useNavigate } from 'react-router-dom';
-import { storeFiles, retrieveFiles } from "../web3Store"
+import { store, retrieveFiles } from "../web3Store"
 const { ethers } = require("ethers")
 
 
@@ -32,8 +32,7 @@ export default function Login() {
         console.log("Account:", await signer.getAddress());
         //navigate to next page
         console.log('in login handler');
-        await storeFiles();
-        await retrieveFiles();
+        await store('testFile.txt', 'hello ethnyc');
 
         navigate('./patient');
 
@@ -43,8 +42,8 @@ export default function Login() {
         //iitialise privy client
       }
     }
-    catch {
-      console.log('Please install Metamask');
+    catch (err) {
+      console.log(err);
 
     }
   }

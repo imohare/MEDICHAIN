@@ -2,7 +2,7 @@ import { create } from 'ipfs-core'
 
 let ipfs;
 
-const cat = async (cid) => {
+export const read = async (cid) => {
   const content = []
 
   for await (const chunk of ipfs.cat(cid)) {
@@ -37,8 +37,10 @@ export const store = async (name, content) => {
 
   console.log('Reading file...')
 
-  const text = await cat(file.cid)
+  const text = await read(file.cid)
 
   console.log(`\u2514\u2500 ${file.path} ${text.toString()}`)
   console.log(`Preview: https://ipfs.io/ipfs/${file.cid}`)
+  return file.cid;
 }
+
