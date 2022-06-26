@@ -9,6 +9,8 @@ import PatientPermissions from './pages/patient/patient-permissions';
 import Login from './pages/login';
 
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -22,5 +24,6 @@ root.render(
       <Route path="doctor/addData" element={<AddPatientData />} />
     </Routes>
   </BrowserRouter>
+
 );
 

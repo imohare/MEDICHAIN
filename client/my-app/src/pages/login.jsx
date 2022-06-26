@@ -1,13 +1,12 @@
 // import LogoutButton from '../../buttons/logout';
 // import { Flex, Box, Text } from "rebass";
 import React, { useEffect, useState } from 'react';
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Navigate } from 'react-router-dom';
 import "./login.css";
 import { PrivyClient, SiweSession } from '@privy-io/privy-browser'
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 const { ethers } = require("ethers");
-
-
-
 
 
 export default function Login() {
@@ -16,7 +15,6 @@ export default function Login() {
   const [signerState, setSigner] = useState('No signer yet');
   const [sessionState, setSession] = useState('No session yet');
   const [clientState, setClient] = useState('No client yet');
-
 
   const loginHandler = async () => {
     try {
@@ -53,6 +51,7 @@ export default function Login() {
       <h1>Welcome To Medichain</h1>
       <h2>Take Control Of Your Own Data</h2>
       <button onClick={loginHandler}>Login</button>
+      <ConnectButton />
 
 
     </div>

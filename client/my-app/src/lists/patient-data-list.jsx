@@ -1,4 +1,4 @@
-import myData from './medicationAdmin.json';
+import myData from '../pages/patient/medicationAdmin.json';
 
  export default function PatientDataList() {
 
