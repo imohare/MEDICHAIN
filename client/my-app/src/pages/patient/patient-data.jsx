@@ -1,4 +1,4 @@
-import { Flex } from "rebass";
+import { Flex, Box, Text} from "rebass";
 
 import LogoutButton from "../../buttons/logout";
 import myData from './medicationAdmin.json';

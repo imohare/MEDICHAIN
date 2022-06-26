@@ -23,5 +23,6 @@ root.render(
       <Route path="doctor/addData" element={<AddPatientData />} />
     </Routes>
   </BrowserRouter>
+
 );
 

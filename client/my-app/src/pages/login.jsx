@@ -1,13 +1,12 @@
 // import LogoutButton from '../../buttons/logout';
 // import { Flex, Box, Text } from "rebass";
 import React, { useEffect, useState } from 'react';
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Navigate } from 'react-router-dom';
 import "./login.css";
 import { PrivyClient, SiweSession } from '@privy-io/privy-browser'
 import { useNavigate } from 'react-router-dom';
 const { ethers } = require("ethers")
-
-
 
 export default function Login() {
   const [ethAddress, setEthAddress] = useState('No address yet');
