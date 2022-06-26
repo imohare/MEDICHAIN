@@ -1,26 +1,44 @@
-import { Web3Storage, getFilesFromPath } from 'web3.storage';
- 
-const token = process.env.API_TOKEN;
-const client = new Web3Storage({ token });
-let cid;
+import { create } from 'ipfs-core'
 
-async function storeFiles () {
-  const files = await getFilesFromPath('yayImAFile.txt');
-  cid = await client.put(files);
-  console.log(cid);
-}
+let ipfs;
 
-async function retrieveFiles () {
-//   const cid =
-//      'bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu'
+const cat = async (cid) => {
+  const content = []
 
-  const res = await client.get(cid)
-  const files = await res.files()
-
-  for (const file of files) {
-    console.log(`${file.cid}: ${file.name} (${file.size} bytes)`)
+  for await (const chunk of ipfs.cat(cid)) {
+    content.push(chunk)
   }
+
+  return content
 }
 
-let funcs = { storeFiles, retrieveFiles }
-export default funcs;
+export const store = async (name, content) => {
+  if (!ipfs) {
+    console.log('Creating IPFS node...')
+
+    ipfs = await create({
+      repo: String(Math.random() + Date.now()),
+      init: { alogorithm: 'ed25519' }
+    })
+  }
+
+  const id = await ipfs.id()
+  console.log(`Connecting to ${id.id}...`)
+
+  const fileToAdd = {
+    path: `${name}`,
+    content: content
+  }
+
+  console.log(`Adding file ${fileToAdd.path}...`)
+  const file = await ipfs.add(fileToAdd)
+
+  console.log(`Added to ${file.cid}`)
+
+  console.log('Reading file...')
+
+  const text = await cat(file.cid)
+
+  console.log(`\u2514\u2500 ${file.path} ${text.toString()}`)
+  console.log(`Preview: https://ipfs.io/ipfs/${file.cid}`)
+}
